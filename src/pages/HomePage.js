@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { getDocs, collection } from "firebase/firestore";
-import { PostCard, skeletonCard } from "../components";
+import { PostCard, SkeletonCard} from "../components";
 import { db } from "../firebase/config";
 import {useTitle} from "../hooks/useTitle";
 
@@ -24,7 +24,7 @@ export const HomePage = () => {
         post ? (
           <PostCard key={post.id} post={post} toggle={toggle} setToggle={setToggle} />
         ) : (
-          <skeletonCard key = {index} />
+          <SkeletonCard key={index}/>
         )
 
       ))}
